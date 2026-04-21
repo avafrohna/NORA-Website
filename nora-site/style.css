@@ -94,11 +94,28 @@ section {
 }
 
 #hero h1 {
-    font-size: var(--font-size-5xl);
-    margin: var(--space-8) 0;
-    max-width: 900px;
+    font-size: clamp(2.25rem, 4.1vw, 3.55rem);
+    margin: var(--space-6) 0 var(--space-4);
+    max-width: none;
     margin-left: auto;
     margin-right: auto;
+    white-space: nowrap;
+}
+
+.hero-initial {
+    font-size: 1.25em;
+    font-weight: 700;
+    letter-spacing: -0.06em;
+    display: inline-block;
+    margin-right: 0.03em;
+}
+
+#problem {
+    padding-bottom: var(--space-12);
+}
+
+#solution {
+    padding-top: var(--space-12);
 }
 
 /* Section Header Styles */
@@ -119,16 +136,18 @@ section {
 /* Evidence Grid */
 .evidence-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--space-12);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-8);
+    align-items: stretch;
 }
 
 .evidence-card {
     background: white;
-    padding: var(--space-12);
+    padding: var(--space-8);
     border: 1px solid var(--color-border);
     border-radius: 12px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
 }
 
 .evidence-card:hover {
@@ -181,14 +200,16 @@ section {
 }
 
 .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--space-16);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-12);
 }
 
 .team-card {
     text-align: center;
     padding: var(--space-4);
+    width: min(100%, 300px);
 }
 
 .photo-placeholder {
@@ -198,6 +219,19 @@ section {
     border-radius: 50%;
     margin: 0 auto var(--space-8);
     background-image: linear-gradient(135deg, #edf2f7, #cbd5e0);
+}
+
+.team-photo {
+    width: 180px;
+    height: 180px;
+    max-width: 180px;
+    max-height: 180px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto var(--space-8);
+    overflow: hidden;
 }
 
 .team-card h3 {
@@ -216,7 +250,7 @@ section {
 
 .team-card .bio {
     font-size: var(--font-size-base);
-    max-width: 280px;
+    max-width: 320px;
     margin-left: auto;
     margin-right: auto;
     color: var(--color-text-muted);
@@ -227,7 +261,7 @@ section {
     text-align: center;
     background-color: var(--color-primary);
     color: white;
-    padding: var(--space-24) 0;
+    padding: var(--space-16) 0;
 }
 
 #contact h2 {
@@ -298,6 +332,10 @@ footer {
     section {
         padding: var(--space-16) 0;
     }
+
+    .evidence-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 768px) {
@@ -309,6 +347,7 @@ footer {
 
     #hero h1 {
         font-size: var(--font-size-4xl);
+        white-space: normal;
     }
 
     #solution .value-prop {
@@ -316,6 +355,7 @@ footer {
     }
 
     .evidence-grid, .team-grid {
+        display: grid;
         grid-template-columns: 1fr;
         gap: var(--space-8);
     }
