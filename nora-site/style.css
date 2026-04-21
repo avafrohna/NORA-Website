@@ -4,6 +4,7 @@
     /* Brand Colors */
     --color-primary: #1a365d; /* Deep Navy - Credibility */
     --color-secondary: #2d3748; /* Cool Gray - Stability */
+    --color-title: #235a8d;
     --color-accent: #3182ce; /* Clinical Blue - Action */
     --color-accent-warm: #f59e0b;
     --color-accent-mint: #14b8a6;
@@ -117,7 +118,7 @@ section {
     letter-spacing: -0.06em;
     display: inline-block;
     margin-right: 0.03em;
-    color: var(--color-accent);
+    color: var(--color-title);
 }
 
 #problem {
