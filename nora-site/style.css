@@ -226,11 +226,16 @@ section {
     padding-top: var(--space-16);
 }
 
+#solution .section-subtitle {
+    max-width: none;
+    white-space: nowrap;
+}
+
 #solution .value-prop {
     display: inline-flex;
     flex-direction: column;
-    gap: var(--space-4);
-    margin-top: var(--space-12);
+    gap: var(--space-2);
+    margin-top: var(--space-8);
 }
 
 #solution .value-prop p {
@@ -239,7 +244,7 @@ section {
     color: var(--color-primary);
     line-height: 1.1;
     margin-bottom: 0;
-    padding: var(--space-4) var(--space-8);
+    padding: var(--space-2) var(--space-4);
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.85);
     box-shadow: 0 10px 24px rgba(26, 54, 93, 0.06);
@@ -416,6 +421,10 @@ footer {
 
     #solution .value-prop {
         font-size: var(--font-size-3xl);
+    }
+
+    #solution .section-subtitle {
+        white-space: normal;
     }
 
     .evidence-grid, .team-grid {
