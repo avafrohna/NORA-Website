@@ -121,6 +121,7 @@ section {
 }
 
 #problem {
+    padding-top: var(--space-16);
     padding-bottom: var(--space-12);
 }
 
@@ -221,6 +222,7 @@ section {
     background:
         linear-gradient(180deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.95)),
         linear-gradient(135deg, rgba(49, 130, 206, 0.08), rgba(20, 184, 166, 0.06));
+    padding-top: var(--space-16);
 }
 
 #solution .value-prop {
