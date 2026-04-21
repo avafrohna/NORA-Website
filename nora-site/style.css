@@ -229,13 +229,14 @@ section {
 #solution .section-subtitle {
     max-width: none;
     white-space: nowrap;
+    margin-bottom: var(--space-12);
 }
 
 #solution .value-prop {
     display: inline-flex;
     flex-direction: column;
     gap: var(--space-2);
-    margin-top: var(--space-8);
+    margin-top: 0;
 }
 
 #solution .value-prop p {
