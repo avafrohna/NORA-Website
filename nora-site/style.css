@@ -21,7 +21,7 @@
     --font-size-2xl: 1.5rem;
     --font-size-3xl: 1.875rem;
     --font-size-4xl: 2.25rem;
-    --font-size-5xl: 3rem;
+    --font-size-5xl: 3.5rem;
 
     /* Spacing */
     --space-1: 0.25rem;
@@ -30,10 +30,10 @@
     --space-4: 1rem;
     --space-6: 1.5rem;
     --space-8: 2rem;
-    --space-12: 3rem;
+    --space-12: 3.5rem;
     --space-16: 4rem;
-    --space-20: 5rem;
-    --space-24: 6rem;
+    --space-20: 6rem;
+    --space-24: 8rem;
 
     /* Layout */
     --container-width: 1100px;
@@ -46,10 +46,14 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--font-family);
     font-size: var(--font-size-base);
-    line-height: 1.6;
+    line-height: 1.7; /* Increased for readability */
     color: var(--color-text);
     background-color: var(--color-bg);
     -webkit-font-smoothing: antialiased;
@@ -59,7 +63,8 @@ body {
 h1, h2, h3, h4, h5, h6 {
     color: var(--color-primary);
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
 }
 
 p {
@@ -70,49 +75,252 @@ p {
 .container {
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 var(--space-6);
+    padding: 0 var(--space-8);
 }
 
 section {
-    padding: var(--space-20) 0;
+    padding: var(--space-24) 0;
 }
 
-section:nth-child(even) {
+/* Hero Section */
+#hero {
     background-color: var(--color-bg-alt);
+    padding: var(--space-24) 0;
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+#hero h1 {
+    font-size: var(--font-size-5xl);
+    margin: var(--space-8) 0;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Section Header Styles */
+.section-title {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--space-4);
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: var(--font-size-xl);
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto var(--space-16);
+    line-height: 1.5;
+}
+
+/* Evidence Grid */
+.evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-12);
+}
+
+.evidence-card {
+    background: white;
+    padding: var(--space-12);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.evidence-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+}
+
+.evidence-icon {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--space-6);
+}
+
+.evidence-card h3 {
+    margin-bottom: var(--space-4);
+    font-size: var(--font-size-2xl);
+}
+
+.evidence-card cite {
+    display: block;
+    margin-top: var(--space-6);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+/* Outcome Section */
+#solution {
+    text-align: center;
+    background-color: var(--color-bg);
+}
+
+#solution .value-prop {
+    font-size: var(--font-size-5xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.1;
+    margin-top: var(--space-12);
+}
+
+#solution .value-prop p:last-child {
+    color: var(--color-accent);
+}
+
+/* Team Section */
+#team {
+    background-color: var(--color-bg-alt);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-16);
+}
+
+.team-card {
+    text-align: center;
+    padding: var(--space-4);
+}
+
+.photo-placeholder {
+    width: 180px;
+    height: 180px;
+    background-color: #cbd5e0;
+    border-radius: 50%;
+    margin: 0 auto var(--space-8);
+    background-image: linear-gradient(135deg, #edf2f7, #cbd5e0);
+}
+
+.team-card h3 {
+    margin-bottom: var(--space-2);
+    font-size: var(--font-size-2xl);
+}
+
+.team-card .role {
+    font-weight: 600;
+    color: var(--color-accent);
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-6);
+}
+
+.team-card .bio {
+    font-size: var(--font-size-base);
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--color-text-muted);
+}
+
+/* Contact Section */
+#contact {
+    text-align: center;
+    background-color: var(--color-primary);
+    color: white;
+    padding: var(--space-24) 0;
+}
+
+#contact h2 {
+    color: white;
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--space-6);
+}
+
+#contact p {
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: var(--space-12);
+    font-size: var(--font-size-lg);
+}
+
+/* Footer */
+footer {
+    padding: var(--space-12) 0;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+    font-size: var(--font-size-sm);
 }
 
 /* Common Components */
 .badge {
     display: inline-block;
-    padding: var(--space-1) var(--space-3);
+    padding: var(--space-2) var(--space-4);
     background-color: var(--color-accent);
     color: white;
     font-size: var(--font-size-xs);
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border-radius: 9999px;
-    margin-bottom: var(--space-4);
+    letter-spacing: 0.1em;
+    border-radius: 4px; /* More clinical look than pill */
+    margin-bottom: var(--space-6);
 }
 
 .status-tag {
     font-size: var(--font-size-sm);
     color: var(--color-text-muted);
     font-style: italic;
-    opacity: 0.8;
+    font-weight: 500;
 }
 
 .cta-button {
     display: inline-block;
-    padding: var(--space-3) var(--space-6);
-    background-color: var(--color-primary);
-    color: white;
+    padding: var(--space-4) var(--space-8);
+    background-color: white;
+    color: var(--color-primary);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     border-radius: 4px;
-    transition: background-color 0.2s ease;
+    transition: all 0.2s ease;
+    font-size: var(--font-size-lg);
 }
 
 .cta-button:hover {
-    background-color: var(--color-accent);
+    background-color: var(--color-bg-alt);
+    transform: scale(1.02);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+    :root {
+        --font-size-5xl: 3rem;
+        --font-size-4xl: 2rem;
+    }
+    
+    section {
+        padding: var(--space-16) 0;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --font-size-5xl: 2.5rem;
+        --font-size-4xl: 1.75rem;
+        --font-size-3xl: 1.5rem;
+    }
+
+    #hero h1 {
+        font-size: var(--font-size-4xl);
+    }
+
+    #solution .value-prop {
+        font-size: var(--font-size-3xl);
+    }
+
+    .evidence-grid, .team-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+
+    .container {
+        padding: 0 var(--space-6);
+    }
 }
