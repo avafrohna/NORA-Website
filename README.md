@@ -13,7 +13,6 @@ Current status: in development.
 
 ## Project structure
 
-- `nora-site/` – website files
 - `openspec/` – planning and specification documents
 
 ## Goals
@@ -22,12 +21,11 @@ The first version of the site is intended to be:
 - clear
 - credible
 - lightweight
-- easy to deploy publicly
 
 ## Deployment
 
-This site is intended to be hosted online, not run only locally.
+www.norahealth.au
 
 ## Notes
 
-NORA is currently in development, and the website content and structure may evolve as the project progresses.
+NORA is currently in development and structure may evolve as the project progresses.
