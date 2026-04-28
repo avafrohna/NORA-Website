@@ -418,12 +418,14 @@ footer {
     padding: var(--space-3) var(--space-6);
     font-size: var(--font-size-sm);
     line-height: 1.4;
+    margin-top: var(--space-3);
     margin-bottom: 0;
     transform: none;
     box-shadow: 0 12px 30px rgba(26, 54, 93, 0.14);
 }
 
 #hero .status-tag {
+    margin-top: calc(-1 * var(--space-4));
     margin-bottom: 0;
 }
 
