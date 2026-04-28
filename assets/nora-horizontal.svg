@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 160" width="600" height="160">
+  <title>NORA — Horizontal Lockup</title>
+  <g>
+    <path d="M 40 110 C 40 36, 110 36, 120 74 C 130 112, 200 112, 200 38" fill="none" stroke="#2E9B9B" stroke-width="16" stroke-linecap="round"></path>
+    <circle cx="40" cy="110" r="22" fill="#142B4C"></circle>
+    <circle cx="200" cy="38" r="22" fill="#2E9B9B"></circle>
+  </g>
+  <text x="260" y="108" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="96" letter-spacing="2" fill="#142B4C">NORA</text>
+</svg>

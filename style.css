@@ -91,16 +91,16 @@ section {
 
 /* Hero Section */
 #hero {
-    background:
-        radial-gradient(circle at 12% 18%, rgba(49, 130, 206, 0.18), transparent 24%),
-        radial-gradient(circle at 88% 22%, rgba(20, 184, 166, 0.18), transparent 24%),
-        linear-gradient(180deg, #f8fbff 0%, #eef6fb 100%);
-    padding: var(--space-24) 0;
+    background: #eef6fb;
+    padding: 0;
     text-align: center;
     border-bottom: 1px solid var(--color-border);
-    min-height: 60vh;
-    display: flex;
-    align-items: center;
+}
+
+#hero .container {
+    max-width: none;
+    width: 100%;
+    padding: 0;
 }
 
 #hero h1 {
@@ -119,6 +119,52 @@ section {
     display: inline-block;
     margin-right: 0.03em;
     color: var(--color-title);
+}
+
+.hero-visual {
+    position: relative;
+    width: 100%;
+    height: clamp(300px, 48vh, 500px);
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.hero-logo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: var(--space-4) var(--space-8) var(--space-8);
+    object-fit: contain;
+    object-position: center top;
+    background: #ffffff;
+}
+
+.hero-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    padding: var(--space-8);
+    background:
+        radial-gradient(circle at 12% 15%, rgba(49, 130, 206, 0.13), transparent 24%),
+        radial-gradient(circle at 88% 20%, rgba(20, 184, 166, 0.12), transparent 24%),
+        #eef6fb;
+}
+
+.hero-meaning {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    color: var(--color-primary);
+    font-size: var(--font-size-3xl);
+    line-height: 1.45;
+    font-weight: 700;
+}
+
+.hero-meaning strong {
+    color: var(--color-title);
+    font-weight: 700;
 }
 
 #problem {
@@ -368,6 +414,17 @@ footer {
     margin-bottom: var(--space-6);
 }
 
+#hero .badge {
+    position: static;
+    margin-bottom: 0;
+    transform: none;
+    box-shadow: 0 12px 30px rgba(26, 54, 93, 0.14);
+}
+
+#hero .status-tag {
+    margin-bottom: 0;
+}
+
 .status-tag {
     font-size: var(--font-size-sm);
     color: var(--color-text-muted);
@@ -413,6 +470,35 @@ footer {
         --font-size-5xl: 2.5rem;
         --font-size-4xl: 1.75rem;
         --font-size-3xl: 1.5rem;
+    }
+
+    #hero {
+        min-height: auto;
+    }
+
+    .hero-visual {
+        height: 260px;
+    }
+
+    .hero-logo {
+        padding: var(--space-4) var(--space-6) var(--space-6);
+    }
+
+    .hero-info {
+        gap: var(--space-4);
+        padding: var(--space-6);
+    }
+
+    #hero .badge {
+        width: min(88%, 420px);
+        font-size: 0.68rem;
+        line-height: 1.45;
+    }
+
+    .hero-meaning {
+        padding: 0;
+        margin-top: 0;
+        font-size: var(--font-size-2xl);
     }
 
     #hero h1 {
