@@ -25,6 +25,7 @@
         <ul class="nav-links">
             <li><a href="#problem">Problem</a></li>
             <li><a href="#solution">Solution</a></li>
+            <li><a href="#interface">Interface</a></li>
             <li><a href="#team">Team</a></li>
             <li><a href="#contact">Pilots</a></li>
         </ul>
@@ -43,29 +44,52 @@
         </div>
 
         <div class="hero-content">
-            <span class="hero-eyebrow">
-                <span class="pulse-dot"></span>
-                Currently in development
-            </span>
-
-            <h1 class="hero-title">
-                <span class="reveal" data-delay="0">The nurse</span>
-                <span class="reveal" data-delay="80">arrives</span>
-                <span class="reveal gradient-text" data-delay="160">already prepared.</span>
-            </h1>
-
-            <p class="hero-sub reveal" data-delay="320">
-                One visit. Any language. Evidence-based clinical communication, grounded in research and validated at Harvard.
-            </p>
-
-            <div class="hero-acronym reveal" data-delay="420" aria-label="NORA stands for Nursing Operations Response Assistant">
-                <span><b>N</b>ursing</span>
-                <span><b>O</b>perations</span>
-                <span><b>R</b>esponse</span>
-                <span><b>A</b>ssistant</span>
+            <!-- Interactive call-bell demo -->
+            <div class="callbell reveal" data-state="active" data-delay="0" aria-live="polite">
+                <div class="callbell-light" aria-hidden="true">
+                    <span class="cb-ring"></span>
+                    <span class="cb-ring delay"></span>
+                    <span class="cb-core"></span>
+                </div>
+                <div class="callbell-text">
+                    <span class="callbell-label">
+                        <span class="cb-label-active">Call bell · Room 412</span>
+                        <span class="cb-label-resolved">NORA · Room 412 · Prepared</span>
+                    </span>
+                    <span class="callbell-detail">
+                        <span class="cb-detail-active">Patient request · language unknown</span>
+                        <span class="cb-detail-resolved">"My pain is 7/10, started 30 min ago." — translated from Spanish</span>
+                    </span>
+                </div>
+                <button class="callbell-action" type="button">
+                    <span class="cb-action-active">Answer with NORA</span>
+                    <span class="cb-action-resolved">Reset</span>
+                    <svg class="cb-arrow" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                        <path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/>
+                    </svg>
+                </button>
             </div>
 
-            <div class="hero-badge reveal" data-delay="520">
+            <h1 class="hero-title">
+                <span class="hero-title-line1">
+                    <span class="reveal" data-delay="120">The nurse</span>
+                    <span class="reveal" data-delay="200">arrives</span>
+                </span>
+                <span class="reveal gradient-text hero-title-line2" data-delay="280">already prepared.</span>
+            </h1>
+
+            <p class="hero-sub reveal" data-delay="440">
+                NORA is a nurse-facing clinical communication platform that prepares clinicians before every patient interaction — in any language, grounded in evidence, and validated at Harvard.
+            </p>
+
+            <div class="hero-status-row reveal" data-delay="540">
+                <span class="hero-status">
+                    <span class="pulse-dot"></span>
+                    Pilot program open — 2026
+                </span>
+            </div>
+
+            <div class="hero-badge reveal" data-delay="620">
                 <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
                     <path fill="currentColor" d="M12 2l2.39 6.95H22l-6.18 4.49L18.18 22 12 17.27 5.82 22l2.36-8.56L2 8.95h7.61z"/>
                 </svg>
@@ -121,7 +145,7 @@
             <div class="section-head light">
                 <span class="kicker">02 — The solution</span>
                 <h2 class="section-title">Anticipate. Translate.<br><span class="gradient-text">Arrive ready.</span></h2>
-                <p class="section-sub">A clinical workflow that understands what a patient needs before the first step into the room — in any language they speak.</p>
+                <p class="section-sub">A nurse-facing platform that understands what a patient needs before the first step into the room — translating, summarising, and surfacing what's clinically relevant, in any language.</p>
             </div>
 
             <div class="flow">
@@ -144,6 +168,25 @@
                 </div>
             </div>
 
+            <div class="nora-define reveal" aria-label="NORA stands for Nursing Operations Response Assistant">
+                <div class="nl-block">
+                    <span class="nl-letter">N</span>
+                    <span class="nl-word">Nursing</span>
+                </div>
+                <div class="nl-block">
+                    <span class="nl-letter">O</span>
+                    <span class="nl-word">Operations</span>
+                </div>
+                <div class="nl-block">
+                    <span class="nl-letter">R</span>
+                    <span class="nl-word">Response</span>
+                </div>
+                <div class="nl-block">
+                    <span class="nl-letter">A</span>
+                    <span class="nl-word">Assistant</span>
+                </div>
+            </div>
+
             <div class="value-prop">
                 <p>Nurse arrives prepared.</p>
                 <p class="accent">One visit. Any language.</p>
@@ -151,10 +194,98 @@
         </div>
     </section>
 
+
+    <section id="interface">
+        <div class="interface-bg" aria-hidden="true">
+            <div class="orb orb-h"></div>
+            <div class="orb orb-i"></div>
+        </div>
+        <div class="container">
+            <div class="section-head light">
+                <span class="kicker">03 — The interface</span>
+                <h2 class="section-title">Built for the ward.<br><span class="gradient-text">Ready at a glance.</span></h2>
+                <p class="section-sub">NORA's web dashboard gives nurses a live feed of patient requests — summarised, translated, and triaged before they leave the station.</p>
+            </div>
+
+            <div class="nora-dash reveal">
+                <div class="nd-sidebar">
+                    <div class="nd-logo">NORA</div>
+                    <div class="nd-ward">North Shore Care Home</div>
+                    <nav class="nd-nav">
+                        <div class="nd-item nd-active"><i class="nd-icon">◈</i> Requests <span class="nd-badge">3</span></div>
+                        <div class="nd-item"><i class="nd-icon">◎</i> Patients <span class="nd-badge nd-teal">18</span></div>
+                        <div class="nd-item"><i class="nd-icon">✓</i> Resolved</div>
+                        <div class="nd-item"><i class="nd-icon">▦</i> Analytics</div>
+                    </nav>
+                    <div class="nd-user">
+                        <div class="nd-avatar">AC</div>
+                        <div>
+                            <div class="nd-uname">Allison C.</div>
+                            <div class="nd-urole">Charge Nurse</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nd-main">
+                    <div class="nd-topbar">
+                        <div>
+                            <div class="nd-title">Active Requests</div>
+                            <div class="nd-sub">Tuesday 6 May</div>
+                        </div>
+                        <div class="nd-live"><span class="nd-dot"></span> Live</div>
+                    </div>
+
+                    <div class="nd-content">
+                        <div class="nd-stats">
+                            <div class="nd-stat"><div class="nd-stat-label">Active</div><div class="nd-stat-val">3</div></div>
+                            <div class="nd-stat"><div class="nd-stat-label">Flagged</div><div class="nd-stat-val nd-red">2</div></div>
+                            <div class="nd-stat"><div class="nd-stat-label">Translated</div><div class="nd-stat-val">2</div></div>
+                            <div class="nd-stat"><div class="nd-stat-label">Resolved today</div><div class="nd-stat-val nd-teal-val">14</div></div>
+                        </div>
+
+                        <div class="nd-table">
+                            <div class="nd-table-head">
+                                <div class="nd-filters">
+                                    <span class="nd-filter nd-filter-active">All</span>
+                                    <span class="nd-filter">Flagged</span>
+                                    <span class="nd-filter">Translated</span>
+                                </div>
+                            </div>
+                            <div class="nd-col-hd">
+                                <span>Bed</span><span>Patient</span><span>Summary</span><span>Time</span>Flag
+                            </div>
+                            <div class="nd-row nd-emergent">
+                                <span class="nd-bed">Bed 308</span>
+                                <span class="nd-patient">James Kowalski</span>
+                                <span class="nd-summary">Chest pain and dizziness</span>
+                                <span class="nd-time">Just now</span>
+                                <span class="nd-flag">⚑</span>
+                            </div>
+                            <div class="nd-row nd-emergent">
+                                <span class="nd-bed">Bed 412</span>
+                                <span class="nd-patient">Maria Santos</span>
+                                <span class="nd-summary">Fallen and can't get up <span class="nd-lang">Spanish</span></span>
+                                <span class="nd-time">2 min ago</span>
+                                <span class="nd-flag">⚑</span>
+                            </div>
+                            <div class="nd-row nd-last">
+                                <span class="nd-bed">Bed 215</span>
+                                <span class="nd-patient">Wei Zhang</span>
+                                <span class="nd-summary">Needs blanket <span class="nd-lang">Mandarin</span></span>
+                                <span class="nd-time">8 min ago</span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="team">
         <div class="container">
             <div class="section-head">
-                <span class="kicker">03 — The team</span>
+                <span class="kicker">04 — The team</span>
                 <h2 class="section-title">Built by clinicians,<br><span class="muted">engineers, and operators.</span></h2>
                 <p class="section-sub">A multidisciplinary team rethinking how clinical communication works in high-pressure environments.</p>
             </div>
@@ -165,28 +296,24 @@
                     <h3>Dr. Mohamad Assoum</h3>
                     <p class="role">Founder & CEO</p>
                     <p class="bio">Global health leader with experience across WHO, CIFF, and Merck KGaA. Background in health systems design and strengthening, with a focus on scaling impactful solutions across complex care environments.</p>
-                    <a href="mailto:mass1091@uni.sydney.edu.au" class="team-contact-btn">Contact</a>
                 </article>
                 <article class="team-card">
                     <img class="team-photo" src="team_photos/ava_headshot.jpg" alt="Ava Frohna">
                     <h3>Ava Frohna</h3>
                     <p class="role">Co-Founder & Technical Lead</p>
                     <p class="bio">Master of Cybersecurity student at the University of Sydney, focused on secure system design and healthcare data infrastructure. Experience building scalable, high-reliability systems with a focus on safety and performance.</p>
-                    <a href="mailto:frohna.ava@gmail.com" class="team-contact-btn">Contact</a>
                 </article>
                 <article class="team-card">
                     <img class="team-photo" src="team_photos/ted_headshot.jpeg" alt="Ted Dennis">
                     <h3>Ted Dennis</h3>
                     <p class="role">Co-Founder & Commercial Lead</p>
                     <p class="bio">Strategy consultant turned healthtech builder. Ted leads NORA's commercial expansion, with a background spanning top-tier consulting and complex institutional clients across Australia and beyond.</p>
-                    <a href="mailto:teddennis00@gmail.com" class="team-contact-btn">Contact</a>
                 </article>
                 <article class="team-card">
                     <img class="team-photo" src="team_photos/priyanka_headshot.jpg" alt="Priyanka Grover">
                     <h3>Dr. Priyanka Grover</h3>
                     <p class="role">Co-Founder & Clinical Lead</p>
                     <p class="bio">Senior clinical dentist with nearly two decades of experience across NSW and QLD Health. Holds a Master's in Community Oral Health, Epidemiology, and Preventive Dentistry from the University of Sydney, and is currently pursuing a Master of Leadership in Health Management at UNSW.</p>
-                    <a href="mailto:drpri19@outlook.com" class="team-contact-btn">Contact</a>
                 </article>
             </div>
         </div>
@@ -198,15 +325,38 @@
             <div class="orb orb-g"></div>
         </div>
         <div class="container">
-            <span class="kicker light">04 — What's next</span>
+            <span class="kicker light">05 — What's next</span>
             <h2 class="contact-title">Pilot NORA<br>in your facility.</h2>
             <p class="contact-sub">We're partnering with visionary health facilities for our 2026 pilot program. If that's you — we'd love to talk.</p>
-            <a href="mailto:hello@norahealth.au" class="cta-button">
-                <span>Get in touch</span>
-                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-                    <path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/>
-                </svg>
-            </a>
+
+            <div class="pilot-form-wrap">
+                <div class="pilot-row">
+                    <div class="pilot-field">
+                        <label for="pilot-name">Your name</label>
+                        <input type="text" id="pilot-name" placeholder="Jane Smith" autocomplete="name">
+                    </div>
+                    <div class="pilot-field">
+                        <label for="pilot-email">Email address</label>
+                        <input type="email" id="pilot-email" placeholder="jane@hospital.com.au" autocomplete="email">
+                    </div>
+                </div>
+                <div class="pilot-field">
+                    <label for="pilot-facility">Facility / organisation</label>
+                    <input type="text" id="pilot-facility" placeholder="e.g. Royal North Shore Hospital">
+                </div>
+                <div class="pilot-field">
+                    <label for="pilot-message">Tell us about your interest</label>
+                    <textarea id="pilot-message" rows="4" placeholder="Describe your facility, the challenges you're facing, and why you're interested in piloting NORA…"></textarea>
+                </div>
+                <button class="cta-button pilot-submit" type="button" id="pilot-send">
+                    <span>Send enquiry</span>
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                        <path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/>
+                    </svg>
+                </button>
+                <p class="pilot-success" id="pilot-success" aria-live="polite"></p>
+            </div>
+
             <p class="status-tag-light">Phase 1 development in progress.</p>
         </div>
     </section>
@@ -287,6 +437,42 @@
         });
     }
 
+    // Call-bell demo toggle
+    const callbell = document.querySelector('.callbell');
+    if (callbell) {
+        const action = callbell.querySelector('.callbell-action');
+        action.addEventListener('click', () => {
+            const next = callbell.dataset.state === 'active' ? 'resolved' : 'active';
+            callbell.dataset.state = next;
+        });
+    }
+
+
+    // Pilot enquiry form
+    document.getElementById('pilot-send').addEventListener('click', () => {
+        const name     = document.getElementById('pilot-name').value.trim();
+        const email    = document.getElementById('pilot-email').value.trim();
+        const facility = document.getElementById('pilot-facility').value.trim();
+        const message  = document.getElementById('pilot-message').value.trim();
+        const success  = document.getElementById('pilot-success');
+
+        if (!name || !email || !message) {
+            success.textContent = 'Please fill in your name, email, and message.';
+            success.style.color = '#fca5a5';
+            return;
+        }
+
+        const subject = encodeURIComponent('NORA Pilot Enquiry' + (facility ? ' — ' + facility : ''));
+        const body = encodeURIComponent(
+            'Name: ' + name + '\n' +
+            'Email: ' + email + '\n' +
+            'Facility: ' + (facility || 'Not provided') + '\n\n' +
+            message
+        );
+        window.location.href = 'mailto:hello@norahealth.au?subject=' + subject + '&body=' + body;
+        success.textContent = '✓ Opening your email client…';
+        success.style.color = '#5eead4';
+    });
     // Card tilt
     document.querySelectorAll('[data-tilt]').forEach(card => {
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
