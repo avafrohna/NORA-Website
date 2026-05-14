@@ -329,7 +329,7 @@
             <h2 class="contact-title">Pilot NORA<br>in your facility.</h2>
             <p class="contact-sub">We're partnering with visionary health facilities for our 2026 pilot program. If that's you — we'd love to talk.</p>
 
-            <div class="pilot-form-wrap">
+            <form class="pilot-form-wrap" id="pilot-form" action="https://formspree.io/f/xzdoqjgd" method="POST" novalidate>
                 <div class="pilot-row">
                     <div class="pilot-field">
                         <label for="pilot-name">Your name</label>
@@ -348,14 +348,14 @@
                     <label for="pilot-message">Tell us about your interest</label>
                     <textarea id="pilot-message" rows="4" placeholder="Describe your facility, the challenges you're facing, and why you're interested in piloting NORA…"></textarea>
                 </div>
-                <button class="cta-button pilot-submit" type="button" id="pilot-send">
+                <button class="cta-button pilot-submit" type="submit" id="pilot-send">
                     <span>Send enquiry</span>
                     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
                         <path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/>
                     </svg>
                 </button>
                 <p class="pilot-success" id="pilot-success" aria-live="polite"></p>
-            </div>
+            </form>
 
             <p class="status-tag-light">Phase 1 development in progress.</p>
         </div>
@@ -447,32 +447,43 @@
         });
     }
 
-
     // Pilot enquiry form
-    document.getElementById('pilot-send').addEventListener('click', () => {
-        const name     = document.getElementById('pilot-name').value.trim();
-        const email    = document.getElementById('pilot-email').value.trim();
-        const facility = document.getElementById('pilot-facility').value.trim();
-        const message  = document.getElementById('pilot-message').value.trim();
-        const success  = document.getElementById('pilot-success');
+    const pilotForm = document.getElementById('pilot-form');
+    const pilotBtn  = document.getElementById('pilot-send');
+    const pilotStatus = document.getElementById('pilot-success');
 
-        if (!name || !email || !message) {
-            success.textContent = 'Please fill in your name, email, and message.';
-            success.style.color = '#fca5a5';
-            return;
+    pilotForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        pilotBtn.disabled = true;
+        pilotBtn.querySelector('span').textContent = 'Sending…';
+        pilotStatus.textContent = '';
+        pilotStatus.style.color = '';
+
+        try {
+            const res = await fetch(pilotForm.action, {
+                method: 'POST',
+                body: new FormData(pilotForm),
+                headers: { Accept: 'application/json' }
+            });
+
+            if (res.ok) {
+                pilotForm.reset();
+                pilotStatus.textContent = "Message sent — we'll be in touch soon.";
+                pilotStatus.style.color = '#5eead4';
+                pilotBtn.querySelector('span').textContent = 'Send enquiry';
+            } else {
+                const data = await res.json();
+                throw new Error(data?.errors?.[0]?.message || 'Something went wrong.');
+            }
+        } catch (err) {
+            pilotStatus.textContent = err.message || 'Failed to send. Please email us at hello@norahealth.au';
+            pilotStatus.style.color = '#fca5a5';
+            pilotBtn.querySelector('span').textContent = 'Send enquiry';
         }
 
-        const subject = encodeURIComponent('NORA Pilot Enquiry' + (facility ? ' — ' + facility : ''));
-        const body = encodeURIComponent(
-            'Name: ' + name + '\n' +
-            'Email: ' + email + '\n' +
-            'Facility: ' + (facility || 'Not provided') + '\n\n' +
-            message
-        );
-        window.location.href = 'mailto:hello@norahealth.au?subject=' + subject + '&body=' + body;
-        success.textContent = '✓ Opening your email client…';
-        success.style.color = '#5eead4';
+        pilotBtn.disabled = false;
     });
+
     // Card tilt
     document.querySelectorAll('[data-tilt]').forEach(card => {
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
